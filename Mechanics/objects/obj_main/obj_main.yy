@@ -5,23 +5,13 @@
     "name": "obj_main",
     "eventList": [
         {
-            "id": "7d970b69-500f-41a0-a6ff-9a331a4bdbe9",
+            "id": "d90033c8-8862-420b-b74e-4f8f13bddcdf",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 72,
-            "eventtype": 8,
-            "m_owner": "fb6dc45f-cf17-4d2e-a24c-42bec82197f7"
-        },
-        {
-            "id": "9fba8875-ecf6-4d2a-97ff-1ac6355d89f6",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 76,
-            "eventtype": 8,
+            "enumb": 4,
+            "eventtype": 7,
             "m_owner": "fb6dc45f-cf17-4d2e-a24c-42bec82197f7"
         }
     ],
