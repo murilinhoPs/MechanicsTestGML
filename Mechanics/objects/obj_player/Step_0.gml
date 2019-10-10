@@ -1,3 +1,4 @@
+#region Movement
 if(keyboard_check_pressed(vk_right))
 {
 	input = move_right;
@@ -17,4 +18,31 @@ if(keyboard_check_pressed(vk_left))
 {
 	input = move_left;
 	alarm[0] = alarm_interval;
+}
+#endregion
+
+#region Limits
+if(x >= 450)
+{
+	x = 450;
+}
+else if(x <= 50)
+{
+	x = 50;
+}
+
+if(y <= 80)
+{
+	y = 80;
+}
+else if(y >= 620)
+{
+	y = 620;
+}
+#endregion
+
+if(keyboard_check_pressed(vk_space))
+{
+    instantiate_Action = scrp_instantiate;
+	alarm[1] = alarm_bullet;
 }
