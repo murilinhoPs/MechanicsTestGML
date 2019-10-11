@@ -239,14 +239,6 @@
             }
         },
         {
-            "Key": "ab447275-851c-4c73-8977-e844606054bc",
-            "Value": {
-                "id": "6b46ed35-d823-46e7-85c5-667cc5a55010",
-                "resourcePath": "scripts\\scrp_create_gridAI\\scrp_create_gridAI.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "ab81e25b-610e-4813-975e-53ff0f6c21cd",
             "Value": {
                 "id": "fe51ed76-1280-4e30-aa76-793c69d2a792",
@@ -381,7 +373,6 @@
         "4307fff6-2138-46fc-b8a4-583bcb932d0f",
         "1c3ecf1b-560a-401e-97eb-24956b00c7db",
         "4517d31f-d521-445c-8f93-390fa3831bbd",
-        "ab447275-851c-4c73-8977-e844606054bc",
         "ef6f0532-d115-4314-8e37-3d4ef5ed0361"
     ],
     "tutorial": ""
