@@ -2,7 +2,7 @@ var w = 100;
 var h = 80;
 
 
-//for(var i = 0; i <= room_height; i += h)
+//for(var i = 0; i < room_height; i += h)
 //{
 //	//draw_line_width(0,i, room_width, i, 1);
 		
