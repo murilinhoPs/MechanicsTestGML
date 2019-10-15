@@ -31,13 +31,13 @@ else if(x <= 50)
 	x = 50;
 }
 
-if(y <= 120)
+if(y <= 80)
 {
-	y = 120;
+	y = 80;
 }
-else if(y >= 680)
+else if(y >= 620)
 {
-	y = 680;
+	y = 620;
 }
 #endregion
 
