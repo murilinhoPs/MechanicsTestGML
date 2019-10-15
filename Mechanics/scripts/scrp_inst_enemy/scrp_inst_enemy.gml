@@ -4,7 +4,7 @@ if(obj_main.vidas > 0)
 
 	inst.direction = point_direction(x,y,obj_player.x,obj_player.y);
 	inst.image_angle = point_direction(x,y,obj_player.x,obj_player.y);
-	inst.speed = irandom_range(6, 10);
+	inst.speed = random_range(6, 8);
 }
 
 
