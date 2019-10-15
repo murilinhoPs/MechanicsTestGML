@@ -9,7 +9,7 @@
     "bbox_bottom": 110,
     "bbox_left": 7,
     "bbox_right": 52,
-    "bbox_top": 26,
+    "bbox_top": 27,
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
@@ -55,7 +55,7 @@
         }
     ],
     "origin": 9,
-    "originLocked": false,
+    "originLocked": true,
     "playbackSpeed": 0,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,

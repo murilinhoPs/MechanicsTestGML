@@ -1,4 +1,6 @@
-var inst = instance_create_layer(x,y + 10, "Instances", obj_bullet);
+angulo = image_angle;
+
+var inst = instance_create_layer(x,y + 10, "Instances", obj_bullet_pl);
 	
-inst.direction = image_angle;
+inst.direction = angulo;
 inst.speed = 10;

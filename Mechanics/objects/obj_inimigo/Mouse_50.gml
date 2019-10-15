@@ -1,45 +1,45 @@
 /// @description Test for enemy AI
 
-#region AreaToWalk
+//#region AreaToWalk
 
-var x_range = random_range(room_width/2, room_width);
-var y_range = random_range(room_height/2, room_height);
+//var x_range = random_range(room_width/2, room_width);
+//var y_range = random_range(room_height/2, room_height);
 
-var x_goal =  (x_range div 100) * 100 + 50;
-var y_goal = (y_range div 80) * 80 + 40;
+//var x_goal =  (x_range div 100) * 100 + 50;
+//var y_goal = (y_range div 80) * 80 + 40;
 
-#endregion
+//#endregion
 
 
-#region LimitGoal
+//#region LimitGoal
 
-if(x_goal <= 550)
-{
-	x_goal = 550;
-}
-else if(x_goal >= 950)
-{
-	x_goal = 950;
-}
+//if(x_goal <= 550)
+//{
+//	x_goal = 550;
+//}
+//else if(x_goal >= 950)
+//{
+//	x_goal = 950;
+//}
 
-if(y_goal <= 120)
-{
-	y_goal = 120;
-}
-else if(y_goal >= 680)
-{
-	y_goal = 680;
-}
+//if(y_goal <= 120)
+//{
+//	y_goal = 120;
+//}
+//else if(y_goal >= 680)
+//{
+//	y_goal = 680;
+//}
 
-#endregion
+//#endregion
 
-// Going to path (Pathfinding)
-if(mp_grid_path(global.grid, path, x, y, x_goal, y_goal, 0))
-{
+//// Going to path (Pathfinding)
+//if(mp_grid_path(global.grid, path, x, y, x_goal, y_goal, 0))
+//{
 	
-	path_start(path, 4, path_action_stop, false);
+//	path_start(path, 4, path_action_stop, false);
 		
-}
+//}
 
 #region Obsolete
 

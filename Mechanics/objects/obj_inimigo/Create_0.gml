@@ -1,6 +1,10 @@
 vidas = 100;
 path = path_add();
-timer = room_speed + 10;
+timer = random_range(room_speed/2, room_speed);
+idle_timer = room_speed/4;
+
+instantiate_bullet = undefined;
+alarm_bullet = random_range(2, 4);
 
 enum state {idle, walking, shooting, escaping};
 state = state.idle;
@@ -15,4 +19,4 @@ y_goal = undefined;
 
 #endregion
 
-alarm[0] = timer;
+alarm[0] = idle_timer;

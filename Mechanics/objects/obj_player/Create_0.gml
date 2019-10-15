@@ -3,7 +3,7 @@ instantiate_Action = undefined;
 
 
 alarm_interval = 2.5;
-alarm_bullet = 10;
+alarm_bullet = 7.15;
 
 
 grid_width = 100;
