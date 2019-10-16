@@ -24,7 +24,6 @@ for(var i = 0; i < room_width; i += w)
 			
 			if(variavel <= 600)
 				variavel += h;
-			show_debug_message(variavel);
 		}
 	}
 	// Grid Inimigo
@@ -39,7 +38,6 @@ for(var i = 0; i < room_width; i += w)
 			
 			if(variavel <= 600)
 				variavel += h;
-			show_debug_message(variavel);
 		}
 	}
 }

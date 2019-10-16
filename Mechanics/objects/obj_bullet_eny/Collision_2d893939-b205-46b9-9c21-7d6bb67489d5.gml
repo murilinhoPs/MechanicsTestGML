@@ -2,4 +2,4 @@
 
 instance_destroy();
 
-obj_main.vidas -= 10;
+//obj_main.vidas -= 10;

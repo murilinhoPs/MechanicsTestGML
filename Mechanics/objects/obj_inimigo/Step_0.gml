@@ -7,7 +7,6 @@ if(object_exists(obj_player))
 {
 	if(state = state.idle)
 	{
-		show_debug_message(timer);
 	
 		if(alarm[0] <= 0)
 		{
@@ -15,7 +14,45 @@ if(object_exists(obj_player))
 			y_goal = (y_range div 80) * 80 + 40;
 		
 			alarm[0] = idle_timer;
-			state = choose(state.walking, state.shooting);
+			//state = choose(state.walking, state.shooting);
+			
+			if(cent_walking <= 5 || cent_shooting <= 5)
+			{
+				state = choose(state.walking, state.shooting);
+				add_cents = true;
+			}
+			else  if(cent_walking > 4 || cent_shooting > 4)
+			{
+				add_cents = false;
+				
+				if(cent_walking > cent_shooting)
+				{
+					state = state.shooting;
+					cent_walking --;
+				}
+				else if(cent_walking < cent_shooting)
+				{
+					state = state.walking;
+					cent_shooting --;
+				}
+			}
+			if(add_cents)
+			{			
+				if(state == state.walking)
+				{
+					cent_walking ++;
+				}
+			 
+				if(state == state.shooting)
+				{
+					cent_shooting ++;
+				}
+			}
+			
+			show_debug_message("Walking: " + string(cent_walking));
+			show_debug_message("Shooting: " + string(cent_shooting));
+			show_debug_message("Actual State: " + string(state));
+			
 		}
 		else
 		{
@@ -34,7 +71,8 @@ if(object_exists(obj_player))
 				path_start(path, 4, path_action_stop, false);
 			
 			alarm[0] = timer;
-			state = choose(state.idle, state.shooting);
+			//state = choose(state.idle, state.shooting);
+			state = state.idle;
 		}
 	}
 

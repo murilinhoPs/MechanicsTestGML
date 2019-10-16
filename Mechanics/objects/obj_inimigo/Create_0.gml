@@ -20,3 +20,7 @@ y_goal = undefined;
 #endregion
 
 alarm[0] = idle_timer;
+
+cent_walking = 0;
+cent_shooting = 0;
+add_cents = true;
