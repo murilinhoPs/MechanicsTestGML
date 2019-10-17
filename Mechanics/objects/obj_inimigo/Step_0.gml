@@ -41,10 +41,13 @@ if (vidas <= 0)
 					walking_demand ++;
 				}
 			 
-				if(state == state.shooting)
-				{
-					shooting_demand ++;
-				}
+			 //Troquei essa parta para adicionar o shooting demand quando 
+			 //levar muito tiro do player para daí seu estado ser andando para desviar das balas com mais frequência
+				
+				//if(state == state.shooting)
+				//{
+				//	shooting_demand ++;
+				//}
 		   }
 			if(!add_demands)
 			{		
@@ -76,6 +79,7 @@ if (vidas <= 0)
 		}
 	}
 
+#region States != Idle
 	if(state = state.walking)
 	{
 		if(alarm[0] <= 0)
@@ -108,6 +112,7 @@ if (vidas <= 0)
 	{
 		state = state.idle;
 	}
+#endregion
 
 #region Limit
 

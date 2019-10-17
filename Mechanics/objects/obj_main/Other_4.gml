@@ -4,8 +4,8 @@ if(room == rm_game)
 {
 	scrp_create_grid();
 	
-	repeat(3)
-	{
+	//repeat(3)
+	//{
 			x_screen = random_range(room_width/2, room_width);
 			y_screen = random_range(0, room_height);
 		
@@ -21,5 +21,5 @@ if(room == rm_game)
 			y_grid_pos = 680;
 		}		
 			instance_create_layer(x_grid_pos, y_grid_pos, "Instances", obj_inimigo);
-	}
+	//}
 }
