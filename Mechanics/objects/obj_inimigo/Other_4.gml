@@ -1,7 +1,16 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Choose a initial state
 state = choose(state.walking, state.shooting);
 
-interfer_demands = false;
-
-show_debug_message(string(state));
+if(state == state.walking)
+{
+	estado_anterior = state.walking;
+	
+	walking_demand ++;
+}
+				
+if(state == state.shooting)
+{
+	estado_anterior = state.shooting;
+		
+	shooting_demand ++;
+}

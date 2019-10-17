@@ -7,75 +7,54 @@ if (vidas <= 0)
 	{
 		if(alarm[0] <= 0)
 		{
-			if(walking_demand != 0 || shooting_demand !=0)
+			if(walking_demand >= 0 || shooting_demand >= 0)
 			{
 			
-				#region Idle Update
+				#region Idle Update demands
 	
-					//if(walking_demand >= 4 || shooting_demand >= 4)
-					//	add_demands = false;
-					if((walking_demand > shooting_demand + 3|| shooting_demand > walking_demand ))
+				if(!interfer_demands)
+				{
+					if((walking_demand > shooting_demand + 3 || shooting_demand > walking_demand))
 						add_demands = false;
 			
 					if(walking_demand == shooting_demand)
-					{
-						//walking_demand = shooting_demand = 0;
-		
+					{	
 						add_demands = true;
 					}
+				}
 		
 				#endregion
 	
 					#region Demandas	
 		
+		// Se tiver interferência do player, ele vai tomar as açoes um pouco diferentes. Basicamente oq muda é andar por um tempo maior
 					if(interfer_demands)
-					{
-						if(shooting_demand >= 4 || walking_demand + 3 > shooting_demand)
-							add_demands = false;
-			
-						if(add_demands)
+					{						
+						if(shooting_demand <= 5 )
 						{
-				
-							while(state == state.walking)
-							{
-								walking_demand ++;
-							}
-				
-							while(state == state.shooting)
-							{
-								shooting_demand ++;
-							}
+							add_demands = false;
 						}
-						if(!add_demands)
-						{		
-							if(walking_demand > shooting_demand)
-								{
-									state = state.shooting;
-									walking_demand --;
-								}
-							else if(walking_demand < shooting_demand)
-								{
-									state = state.walking;
-									shooting_demand --;
-								}
+						
+						if(walking_demand == shooting_demand)
+						{
+							interfer_demands = false;
 						}
+						
+						show_debug_message(string(shooting_demand) + " Código shooting " + string(walking_demand) + " Código walking");
 			
 						// se o player tomou 4 tiros e for nos primeiros niveis/menos pontos o inimigo vai andar até voltar ao normal
 			
 						// se o inimigo tomou mais do que 3 tiros ele vai andar até voltar ao normal
 					}
 		
-					if(!interfer_demands)
-					{
 						if(add_demands)
 						{
-				
-							if(state == state.walking)
+							if(estado_anterior == state.walking)
 							{
 								walking_demand ++;
 							}
 				
-							if(state == state.shooting)
+							if(estado_anterior == state.shooting)
 							{
 								shooting_demand ++;
 							}
@@ -85,21 +64,23 @@ if (vidas <= 0)
 							if(walking_demand > shooting_demand)
 								{
 									state = state.shooting;
+									estado_anterior = state.shooting;
+									
 									walking_demand --;
 								}
 							else if(walking_demand < shooting_demand)
 								{
 									state = state.walking;
+									estado_anterior = state.walking;
+									
 									shooting_demand --;
 								}
 						}
-					}
 						#endregion
 			
 						#region Debug smartAI
-						show_debug_message("Walking: " + string(walking_demand) + ", Shooting: " + string(shooting_demand) + ", Actual State: " + string(state));
+						//show_debug_message("Walking: " + string(walking_demand) + ", Shooting: " + string(shooting_demand) + ", Before State: " + string(estado_anterior));
 						#endregion
-		
 			}
 			
 			// Faz mais alguma coisa sla agora

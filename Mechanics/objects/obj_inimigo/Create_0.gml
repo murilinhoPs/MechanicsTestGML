@@ -1,3 +1,5 @@
+///@description Variables initialization
+
 vidas = 100;
 path = path_add();
 timer = random_range(room_speed/2, room_speed);
@@ -7,7 +9,8 @@ instantiate_bullet = undefined;
 alarm_bullet = random_range(2, 4);
 
 enum state {idle, walking, shooting, escaping};
-state = state.idle;
+
+estado_anterior = undefined;
 
 #region WalkArea
 
