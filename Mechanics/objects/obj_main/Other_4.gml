@@ -4,22 +4,22 @@ if(room == rm_game)
 {
 	scrp_create_grid();
 	
-		//repeat(3)
-		//{
-				x_screen = random_range(room_width/2, room_width);
-				y_screen = random_range(0, room_height);
+	repeat(3)
+	{
+			x_screen = random_range(room_width/2, room_width);
+			y_screen = random_range(0, room_height);
 		
-				x_grid_pos = (x_screen div 100) * 100 + 50;
-				y_grid_pos = (y_screen div 80) * 80 + 40;
+			x_grid_pos = (x_screen div 100) * 100 + 50;
+			y_grid_pos = (y_screen div 80) * 80 + 40;
 			
-			if(y_grid_pos <= 120)
-			{
-				y_grid_pos = 120;
-			}
-			else if(y_grid_pos >= 680)
-			{
-				y_grid_pos = 680;
-			}		
-				instance_create_layer(x_grid_pos, y_grid_pos, "Instances", obj_inimigo);
-		//}
+		if(y_grid_pos <= 120)
+		{
+			y_grid_pos = 120;
+		}
+		else if(y_grid_pos >= 680)
+		{
+			y_grid_pos = 680;
+		}		
+			instance_create_layer(x_grid_pos, y_grid_pos, "Instances", obj_inimigo);
+	}
 }

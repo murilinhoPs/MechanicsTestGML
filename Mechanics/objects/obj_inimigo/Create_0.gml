@@ -21,6 +21,6 @@ y_goal = undefined;
 
 alarm[0] = idle_timer;
 
-cent_walking = 0;
-cent_shooting = 0;
-add_cents = true;
+walking_demand = 0;
+shooting_demand = 0;
+add_demands = true;

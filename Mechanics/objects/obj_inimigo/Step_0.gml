@@ -3,56 +3,69 @@
 if (vidas <= 0)
 	instance_destroy();
 
-if(object_exists(obj_player))
-{
+
 	if(state = state.idle)
 	{
-	
 		if(alarm[0] <= 0)
 		{
 			x_goal =  (x_range div 100) * 100 + 50;
 			y_goal = (y_range div 80) * 80 + 40;
 		
 			alarm[0] = idle_timer;
-			//state = choose(state.walking, state.shooting);
-			
-			if(cent_walking <= 5 || cent_shooting <= 5)
+
+	#region Idle Update
+	
+		if(walking_demand >= 4 || shooting_demand >= 4)
+			add_demands = false;
+		else if(walking_demand == shooting_demand)
+		{
+			walking_demand = shooting_demand = 0;
+		
+			add_demands = true;
+		}
+		
+		if(walking_demand >= 4)
+			shooting_demand = 0;
+		if(shooting_demand >= 4)
+			walking_demand = 0;
+		
+	#endregion
+	
+		#region Demandas		
+			if(add_demands)
 			{
 				state = choose(state.walking, state.shooting);
-				add_cents = true;
-			}
-			else  if(cent_walking > 4 || cent_shooting > 4)
-			{
-				add_cents = false;
 				
-				if(cent_walking > cent_shooting)
-				{
-					state = state.shooting;
-					cent_walking --;
-				}
-				else if(cent_walking < cent_shooting)
-				{
-					state = state.walking;
-					cent_shooting --;
-				}
-			}
-			if(add_cents)
-			{			
 				if(state == state.walking)
 				{
-					cent_walking ++;
+					walking_demand ++;
 				}
 			 
 				if(state == state.shooting)
 				{
-					cent_shooting ++;
+					shooting_demand ++;
 				}
+		   }
+			if(!add_demands)
+			{		
+				if(walking_demand > shooting_demand)
+					{
+						state = state.shooting;
+						walking_demand --;
+					}
+				else if(walking_demand < shooting_demand)
+					{
+						state = state.walking;
+						shooting_demand --;
+					}
 			}
+			#endregion
 			
-			show_debug_message("Walking: " + string(cent_walking));
-			show_debug_message("Shooting: " + string(cent_shooting));
-			show_debug_message("Actual State: " + string(state));
-			
+			#region Debug smartAI
+			show_debug_message("Walking: " + string(walking_demand));
+			show_debug_message("Shooting: " + string(shooting_demand));
+			show_debug_message("Actual State: " + string(state) + "Bool demandas: " + string(add_demands));
+			#endregion
 		}
 		else
 		{
@@ -76,19 +89,25 @@ if(object_exists(obj_player))
 		}
 	}
 
-	if(state = state.shooting)
+	if(object_exists(obj_player))
 	{
-		if(alarm[0] <= 0)
+		if(state = state.shooting)
 		{
-			instantiate_Action = scrp_inst_enemy;
+			if(alarm[0] <= 0)
+			{
+				instantiate_Action = scrp_inst_enemy;
 		
-			alarm[1] = alarm_bullet;		
-			alarm[0] = timer;
+				alarm[1] = alarm_bullet;		
+				alarm[0] = timer;
 		
-			state = state.idle;
+				state = state.idle;
+			}
 		}
 	}
-}
+	else
+	{
+		state = state.idle;
+	}
 
 #region Limit
 
