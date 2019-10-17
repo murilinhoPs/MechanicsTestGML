@@ -24,3 +24,4 @@ alarm[0] = idle_timer;
 walking_demand = 0;
 shooting_demand = 0;
 add_demands = true;
+interfer_demands = false;
