@@ -4,7 +4,7 @@ dash_action = undefined;
 
 
 alarm_interval = 2.5;
-alarm_bullet = 7.15;
+alarm_bullet = 8;
 alarm_dash = 1;
 
 

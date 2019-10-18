@@ -3,7 +3,27 @@
 if (vidas <= 0)
 	instance_destroy();
 	
-distance_bl = distance_to_object(obj_bullet_pl);
+distance_bl = collision_circle(x,y, 50,obj_bullet_pl, false, true);
+
+if(alarm[2] <= 0 && distance_bl)
+{
+			
+	direction = choose(0,90,180,270);
+					
+	var dir_goal = direction;
+					
+	if(dir_goal = 0 ||	dir_goal = 180)	
+	{		
+		x += 200;
+	}
+	if(dir_goal = 90 ||	dir_goal = 270)	
+	{								
+		y += 160;
+		show_debug_message(y);
+	}
+	
+	alarm[2] = dash_timer;
+}
 
 	if(state = state.idle)
 	{
@@ -43,7 +63,7 @@ distance_bl = distance_to_object(obj_bullet_pl);
 							interfer_demands = false;
 						}
 						
-						show_debug_message(string(shooting_demand) + " Código shooting " + string(walking_demand) + " Código walking");
+						//show_debug_message(string(shooting_demand) + " Código shooting " + string(walking_demand) + " Código walking");
 			
 						// se o player tomou 4 tiros e for nos primeiros niveis/menos pontos o inimigo vai andar até voltar ao normal
 			
@@ -110,22 +130,9 @@ distance_bl = distance_to_object(obj_bullet_pl);
 				path_start(path, 4, path_action_stop, false);
 				
 			}
-				if(alarm[2] <= 0 && collision_circle(x,y , 500,obj_bullet_pl, false, true))
-				{
+
 			
-					direction = choose(0,90,180,270);
-					
-					var dir_goal = direction;
-					
-					if(dir_goal = 0 ||	dir_goal = 180)			
-						x += 200;
-					if(dir_goal = 90 ||	dir_goal = 270)			
-						y += 160;
-					
-					alarm[2] = dash_timer;
-				}
-			
-		
+
 			alarm[0] = timer;
 
 			state = state.idle;
