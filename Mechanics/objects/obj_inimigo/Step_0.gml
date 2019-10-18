@@ -3,8 +3,7 @@
 if (vidas <= 0)
 	instance_destroy();
 	
-distance_bl = collision_circle(x,y, 50,obj_bullet_pl, false, true);
-
+distance_bl = collision_circle(x,y, 100,obj_bullet_pl, false, true);
 if(alarm[2] <= 0 && distance_bl)
 {
 			
@@ -15,11 +14,12 @@ if(alarm[2] <= 0 && distance_bl)
 	if(dir_goal = 0 ||	dir_goal = 180)	
 	{		
 		x += 200;
+		
 	}
 	if(dir_goal = 90 ||	dir_goal = 270)	
 	{								
 		y += 160;
-		show_debug_message(y);
+
 	}
 	
 	alarm[2] = dash_timer;
@@ -190,4 +190,13 @@ else if(y_goal >= 680 )
 	//y = 680;
 	
 }
+
+	if(x >= room_width - 50)//450)
+	{
+		x = room_width - 50;
+	}
+	else if(x <= room_width/2 + 50)
+	{
+		x = room_width/2 + 50;
+	}
 #endregion

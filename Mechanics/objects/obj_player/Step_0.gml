@@ -33,7 +33,6 @@ if(x >= room_width/2 - 50)//450)
 else if(x <= 50)
 {
 	x = 50;
-
 }
 
 //if(y <= 80)
