@@ -2,6 +2,8 @@
 
 if (vidas <= 0)
 	instance_destroy();
+	
+distance_bl = distance_to_object(obj_bullet_pl);
 
 	if(state = state.idle)
 	{
@@ -14,7 +16,7 @@ if (vidas <= 0)
 	
 				if(!interfer_demands)
 				{
-					if((walking_demand > shooting_demand + 3 || shooting_demand > walking_demand))
+					if((walking_demand > shooting_demand + 3 || shooting_demand > walking_demand + 2))
 						add_demands = false;
 			
 					if(walking_demand == shooting_demand)
@@ -28,6 +30,7 @@ if (vidas <= 0)
 					#region Demandas	
 		
 		// Se tiver interferência do player, ele vai tomar as açoes um pouco diferentes. Basicamente oq muda é andar por um tempo maior
+				#region Interferir
 					if(interfer_demands)
 					{						
 						if(shooting_demand <= 5 )
@@ -46,6 +49,7 @@ if (vidas <= 0)
 			
 						// se o inimigo tomou mais do que 3 tiros ele vai andar até voltar ao normal
 					}
+				#endregion
 		
 						if(add_demands)
 						{
@@ -81,11 +85,9 @@ if (vidas <= 0)
 						#region Debug smartAI
 						//show_debug_message("Walking: " + string(walking_demand) + ", Shooting: " + string(shooting_demand) + ", Before State: " + string(estado_anterior));
 						#endregion
-			}
-			
+			}			
 			// Faz mais alguma coisa sla agora
 			alarm[0] = idle_timer;
-
 		}
 		else
 		{		
@@ -104,13 +106,29 @@ if (vidas <= 0)
 			y_goal = (y_range div 80) * 80 + 40;	
 			
 			if(mp_grid_path(global.grid, path, x, y, x_goal, y_goal, 0))
+			{
 				path_start(path, 4, path_action_stop, false);
+				
+			}
+				if(alarm[2] <= 0 && collision_circle(x,y , 500,obj_bullet_pl, false, true))
+				{
 			
+					direction = choose(0,90,180,270);
+					
+					var dir_goal = direction;
+					
+					if(dir_goal = 0 ||	dir_goal = 180)			
+						x += 200;
+					if(dir_goal = 90 ||	dir_goal = 270)			
+						y += 160;
+					
+					alarm[2] = dash_timer;
+				}
+			
+		
 			alarm[0] = timer;
 
 			state = state.idle;
-			
-			//distance_to_object(obj_bullet_pl);
 		}
 		
 		else
@@ -141,23 +159,28 @@ if (vidas <= 0)
 	}
 #endregion
 
-#region Limit
+#region Limit_Goal
 
 if(x_goal <= 550)
 {
 	x_goal = 550;
+	//x = 550;
 }
-else if(x_goal >= 950)
+else if(x_goal >= 95 )
 {
 	x_goal = 950;
+	//x = 950;
 }
 
 if(y_goal <= 120)
 {
 	y_goal = 120;
+	//y = 120;
 }
-else if(y_goal >= 680)
+else if(y_goal >= 680 )
 {
 	y_goal = 680;
+	//y = 680;
+	
 }
 #endregion

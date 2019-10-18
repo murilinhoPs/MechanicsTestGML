@@ -2,11 +2,14 @@
 
 vidas = 100;
 path = path_add();
+
 timer = random_range(room_speed/2, room_speed);
-idle_timer = room_speed/4;
+idle_timer = room_speed/6;
+dash_timer = 30;
 
 instantiate_bullet = undefined;
 alarm_bullet = random_range(2, 4);
+distance_bl = undefined;
 
 enum state {idle, walking, shooting, escaping};
 
