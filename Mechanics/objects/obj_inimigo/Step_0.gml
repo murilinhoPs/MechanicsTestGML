@@ -7,20 +7,28 @@ distance_bl = collision_circle(x,y, 100,obj_bullet_pl, false, true);
 if(alarm[2] <= 0 && distance_bl)
 {
 			
-	direction = choose(0,90,180,270);
+	//direction = choose(0,90,180,270);
 					
-	var dir_goal = direction;
-					
-	if(dir_goal = 0 ||	dir_goal = 180)	
-	{		
-		x += 200;
+	//var dir_goal = direction;
 		
-	}
-	if(dir_goal = 90 ||	dir_goal = 270)	
-	{								
-		y += 160;
+if(mp_grid_path(global.grid, path, x, y, distance_bl.x, distance_bl.y, 0))
+{
+	path_start(path, 4, path_action_stop, false);
+				
+}
 
-	}
+		
+	//if(dir_goal = 0 ||	dir_goal = 180)	
+	//{		
+	//	x += 200;
+		
+	//}
+	//if(dir_goal = 90 ||	dir_goal = 270)	
+	//{								
+	//	y += 160;
+
+	//}
+	
 	
 	alarm[2] = dash_timer;
 }
