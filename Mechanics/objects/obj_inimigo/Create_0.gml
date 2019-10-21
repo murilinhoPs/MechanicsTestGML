@@ -5,13 +5,14 @@ path = path_add();
 
 timer = random_range(room_speed/2, room_speed);
 idle_timer = room_speed/6;
-dash_timer = 0;
+dash_timer = room_speed * 5;
 
 instantiate_bullet = undefined;
 alarm_bullet = random_range(2, 4);
 distance_bl = undefined;
 
-enum state {idle, walking, shooting};
+enum state {idle, walking, shooting, catching};
+state = state.idle;
 
 estado_anterior = undefined;
 

@@ -23,6 +23,5 @@ if(room == rm_game)
 			y_grid_pos = 680;
 		}		
 			instance_create_layer(x_grid_pos, y_grid_pos, "Instances", obj_inimigo);
-			
 	}
 }

@@ -3,19 +3,24 @@
 if (vidas <= 0)
 	instance_destroy();
 	
-distance_bl = collision_circle(x,y, 100,obj_bullet_pl, false, true);
+distance_bl = collision_circle(x,y, 150,obj_bullet_pl, false, true);
 if(alarm[2] <= 0 && distance_bl)
 {
 			
-	//direction = choose(0,90,180,270);
+	direction = choose(0,90,180,270);
 					
 	//var dir_goal = direction;
+	
+	var bl_x = (distance_bl.x div 100) * 100 + 50;
+	var bl_y = (distance_bl.y div 80) * 80 + 40;
 		
-if(mp_grid_path(global.grid, path, x, y, distance_bl.x, distance_bl.y, 0))
-{
-	path_start(path, 4, path_action_stop, false);
-				
-}
+	if(mp_grid_path(global.grid, path, x, y, bl_x, bl_y, 0))
+	{
+		path_start(path, 4, path_action_stop, false);	
+		
+		state = state.catching;
+		estado_anterior = state.catching;
+	}
 
 		
 	//if(dir_goal = 0 ||	dir_goal = 180)	
@@ -118,7 +123,8 @@ if(mp_grid_path(global.grid, path, x, y, distance_bl.x, distance_bl.y, 0))
 			alarm[0] = idle_timer;
 		}
 		else
-		{		
+		{	
+			state = state.idle;
 			//animação de procurando lugar ou algo do tipo
 		}
 	}

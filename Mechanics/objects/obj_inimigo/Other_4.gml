@@ -14,3 +14,4 @@ if(state == state.shooting)
 		
 	shooting_demand ++;
 }
+
