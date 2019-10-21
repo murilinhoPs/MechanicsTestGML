@@ -14,7 +14,7 @@ for(var i = 0; i < room_width; i += w)
 	//Grid aliado
 	if(i < room_width/2)
 	{	
-		var variavel = 80 + h;
+		var variavel = 40 + h;
 		
 		for(var t = 0; t < room_width; t += h)
 		{

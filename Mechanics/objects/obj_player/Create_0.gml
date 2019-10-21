@@ -13,3 +13,5 @@ grid_height = 80;
 
 enum playerStates {idle, walking, shooting, dashing, skill};
 player_action = playerStates.idle;
+
+jogar = false;

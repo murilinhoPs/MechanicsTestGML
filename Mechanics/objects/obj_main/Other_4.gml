@@ -24,4 +24,7 @@ if(room == rm_game)
 		}		
 			instance_create_layer(x_grid_pos, y_grid_pos, "Instances", obj_inimigo);
 	}
+	
+	var array;
+
 }
