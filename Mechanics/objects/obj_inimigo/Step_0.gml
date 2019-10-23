@@ -14,17 +14,17 @@ if(alarm[2] <= 0 && inst_bl)
 					
 	var dir_goal = direction;
 	
-	//var bl_x = (inst_bl.x div 100) * 100 + 50;
-	//var bl_y = (inst_bl.y div 80) * 80 + 40;
+	var bl_x = (inst_bl.x div 100) * 100 + 50;
+	var bl_y = (inst_bl.y div 80) * 80 + 40;
 		
-	//if(mp_grid_path(global.grid, path, x, y, bl_x, bl_y, 0))
-	//{
-	//	path_start(path, 4, path_action_stop, false);	
+	if(mp_grid_path(global.grid, path, x, y, bl_x, bl_y, 0))
+	{
+		path_start(path, 4, path_action_stop, false);	
 		
-	//	state = state.catching;
-	//	estado_anterior = state.catching;
+		state = state.catching;
+		estado_anterior = state.catching;
 			
-	//}
+	}
 
 		
 	if(dir_goal = 0 ||	dir_goal = 180)	
@@ -52,7 +52,7 @@ if(alarm[2] <= 0 && inst_bl)
 	
 				if(!interfer_demands)
 				{
-					if((walking_demand > shooting_demand + 3 || shooting_demand > walking_demand + 2))
+					if((walking_demand > shooting_demand + 3 || shooting_demand > walking_demand + 4))
 						add_demands = false;
 			
 					if(walking_demand == shooting_demand)
@@ -139,7 +139,7 @@ if(alarm[2] <= 0 && inst_bl)
 		if(alarm[0] <= 0)
 		{	
 			
-			x_goal =  (x_range div 100) * 100 + 50;
+			x_goal = (x_range div 100) * 100 + 50;
 			y_goal = (y_range div 80) * 80 + 40;	
 			
 			if(mp_grid_path(global.grid, path, x, y, x_goal, y_goal, 0))

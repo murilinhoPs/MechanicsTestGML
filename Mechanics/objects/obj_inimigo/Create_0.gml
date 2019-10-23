@@ -1,6 +1,6 @@
 ///@description Variables initialization
 
-vidas = 100;
+vidas = 5;
 path = path_add();
 
 timer = random_range(room_speed/2, room_speed);

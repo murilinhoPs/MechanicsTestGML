@@ -6,5 +6,7 @@ instance_destroy();
 	enemy_obj.interfer_demands = true;
 	enemy_obj.shooting_demand ++;
 	
-//obj_main.vidas -= 10;
+obj_main.vidas -= 1;
+
+obj_main.pnts_inimigo += 10;
 

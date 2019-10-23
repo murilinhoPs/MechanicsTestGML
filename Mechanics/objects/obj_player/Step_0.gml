@@ -47,11 +47,25 @@ else if(x <= 50)
 
 #region Skills
 
-if(keyboard_check_pressed(vk_space))
+
+if(jogar)
 {
-	player_action = playerStates.shooting;
-    instantiate_Action = scrp_instantiate;
-	alarm[1] = alarm_bullet;
+	if(jogar_num == 1)
+	{
+		ball.x = x + 20;
+		ball.y = y + 10;
+	}
+	
+		if(keyboard_check_pressed(vk_space))
+		{
+			
+			player_action = playerStates.shooting;
+			ball.speed = 10;
+			jogar_num = 2;
+			jogar = false;
+			
+			alarm[1] = alarm_bullet;
+		}
 }
 
 if(keyboard_check(vk_shift))

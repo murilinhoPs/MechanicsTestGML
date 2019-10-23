@@ -6,7 +6,7 @@ if(room == rm_game)
 	
 	mp_grid_add_instances(global.grid, obj_inimigo, false);
 	
-	repeat(3)
+	repeat(2)
 	{
 			x_screen = random_range(room_width/2, room_width);
 			y_screen = random_range(0, room_height);
