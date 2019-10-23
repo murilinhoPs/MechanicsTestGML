@@ -4,7 +4,7 @@ if(room == rm_game)
 {
 	scrp_create_grid();
 	
-	//mp_grid_add_instances(global.grid, obj_inimigo, false);
+	mp_grid_add_instances(global.grid, obj_inimigo, false);
 	
 	repeat(3)
 	{
@@ -23,8 +23,13 @@ if(room == rm_game)
 			y_grid_pos = 680;
 		}		
 			instance_create_layer(x_grid_pos, y_grid_pos, "Instances", obj_inimigo);
+			//mp_grid_add_instances(global.grid, obj_inimigo, false);
 	}
 	
-	var array;
+	//for (var i = 0; i < instance_number(obj_inimigo); ++i) 
+	//{
+	//    var inst = instance_find(obj_inimigo, i);
+	//	mp_grid_add_instances(global.grid, inst, true);
+	//}
 
 }

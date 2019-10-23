@@ -10,6 +10,7 @@ dash_timer = room_speed * 5;
 instantiate_bullet = undefined;
 alarm_bullet = random_range(2, 4);
 distance_bl = undefined;
+inst_bl = undefined;
 
 enum state {idle, walking, shooting, catching};
 state = state.idle;

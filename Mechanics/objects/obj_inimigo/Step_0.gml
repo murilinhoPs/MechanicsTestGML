@@ -1,18 +1,21 @@
 /// @description enemy AI and stuff
 
+//Ir até a bola e pegar ela > escolher um lugar aleatório no mapa X vezes (se ele levou uma bolada ele anda mais um pouco [demands] > atira a bola no player > volta a andar aelatoriamente com o demands e quando identificar uma bola ele volta ao ciclo
+
 if (vidas <= 0)
 	instance_destroy();
 	
 distance_bl = collision_circle(x,y, 150,obj_bullet_pl, false, true);
-if(alarm[2] <= 0 && distance_bl)
+inst_bl = instance_nearest(x,y,obj_bullet_pl);
+if(alarm[2] <= 0 && inst_bl)
 {
-			
+	
 	direction = choose(0,90,180,270);
 					
 	var dir_goal = direction;
 	
-	//var bl_x = (distance_bl.x div 100) * 100 + 50;
-	//var bl_y = (distance_bl.y div 80) * 80 + 40;
+	//var bl_x = (inst_bl.x div 100) * 100 + 50;
+	//var bl_y = (inst_bl.y div 80) * 80 + 40;
 		
 	//if(mp_grid_path(global.grid, path, x, y, bl_x, bl_y, 0))
 	//{
@@ -20,6 +23,7 @@ if(alarm[2] <= 0 && distance_bl)
 		
 	//	state = state.catching;
 	//	estado_anterior = state.catching;
+			
 	//}
 
 		
@@ -33,8 +37,7 @@ if(alarm[2] <= 0 && distance_bl)
 		y += 160;
 
 	}
-	
-	
+		
 	alarm[2] = dash_timer;
 }
 
@@ -144,8 +147,6 @@ if(alarm[2] <= 0 && distance_bl)
 				path_start(path, 4, path_action_stop, false);
 				
 			}
-
-			
 
 			alarm[0] = timer;
 
