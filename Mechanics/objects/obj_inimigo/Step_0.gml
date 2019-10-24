@@ -14,17 +14,17 @@ if(alarm[2] <= 0 && inst_bl)
 					
 	var dir_goal = direction;
 	
-	var bl_x = (inst_bl.x div 100) * 100 + 50;
-	var bl_y = (inst_bl.y div 80) * 80 + 40;
+	//var bl_x = (inst_bl.x div 100) * 100 + 50;
+	//var bl_y = (inst_bl.y div 80) * 80 + 40;
 		
-	if(mp_grid_path(global.grid, path, x, y, bl_x, bl_y, 0))
-	{
-		path_start(path, 4, path_action_stop, false);	
+	//if(mp_grid_path(global.grid, path, x, y, bl_x, bl_y, 0))
+	//{
+	//	path_start(path, 4, path_action_stop, false);	
 		
-		state = state.catching;
-		estado_anterior = state.catching;
+	//	state = state.catching;
+	//	estado_anterior = state.catching;
 			
-	}
+	//}
 
 		
 	if(dir_goal = 0 ||	dir_goal = 180)	
