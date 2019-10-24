@@ -525,6 +525,14 @@
                 "resourcePath": "objects\/obj_main\/obj_main.yy",
                 "resourceType": "GMObject"
             }
+        },
+        {
+            "Key": "ffec7a6f-968f-4193-b257-aeb8115379f3",
+            "Value": {
+                "id": "fb58905a-398e-41a8-9630-8cf50e05bcfb",
+                "resourcePath": "sprites\\spr_raposo\\spr_raposo.yy",
+                "resourceType": "GMSprite"
+            }
         }
     ],
     "script_order": [

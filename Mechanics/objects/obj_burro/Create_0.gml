@@ -16,7 +16,7 @@ x_final =  undefined;
 y_final = undefined;
 #endregion
 
-enum b_states {idle, walking, shooting, catching};
+enum b_states {idle, walking, shooting, catching, searching};
 b_states = b_states.idle;
 
 jogar_i = false;
