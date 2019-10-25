@@ -9,4 +9,4 @@ ball_i = inst;
 jogar_i = true;
 i_num = 1;
 
-b_states = b_states.catching;
+b_states = b_states.walking;

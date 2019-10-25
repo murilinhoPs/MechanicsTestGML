@@ -11,3 +11,7 @@
 //	path_start(path, 4, path_action_stop, false);
 				
 //}
+
+//b_states = b_states.walking;
+//i_num = 1;
+
