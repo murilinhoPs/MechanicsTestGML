@@ -439,6 +439,14 @@
             }
         },
         {
+            "Key": "d93a6345-ffcb-48a6-bb39-4137378f43c7",
+            "Value": {
+                "id": "219758da-9032-45ab-86e3-b98c886e2adf",
+                "resourcePath": "objects\/obj_bullet_ai\/obj_bullet_ai.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "dffaf13e-3877-481d-ad69-f5b7ac668fae",
             "Value": {
                 "id": "125a64bc-2760-4001-966a-ae7944a8c476",
@@ -530,7 +538,7 @@
             "Key": "ffec7a6f-968f-4193-b257-aeb8115379f3",
             "Value": {
                 "id": "fb58905a-398e-41a8-9630-8cf50e05bcfb",
-                "resourcePath": "sprites\\spr_raposo\\spr_raposo.yy",
+                "resourcePath": "sprites\/spr_raposo\/spr_raposo.yy",
                 "resourceType": "GMSprite"
             }
         }

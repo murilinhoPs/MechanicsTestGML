@@ -2,14 +2,9 @@
 
 if(vidas <= 0)
 	instance_destroy();
-	
-if(i_num == 1)
-{
-	ball_i.x = x + 20;
-	ball_i.y = y + 10;
-}
+		
 
-	show_debug_message(string(b_states))	
+		
 		
 switch (b_states) {
 	case b_states.idle:
@@ -36,17 +31,25 @@ switch (b_states) {
 
 	if(alarm[2] <= 0)
 	{	
-			x_range_2 = random_range(room_width/2, room_width);
-			y_range_2 = random_range(80, room_height);
 
-			x_final = (x_range_2 div 100) * 100 + 50;
-			y_final = (y_range_2 div 80) * 80 + 40;
+		x_range_2 = random_range(room_width/2, room_width);
+		y_range_2 = random_range(80, room_height);
+
+		x_final = (x_range_2 div 100) * 100 + 50;
+		y_final = (y_range_2 div 80) * 80 + 40;
 	
-				if(mp_grid_path(global.grid, path, x, y, x_final, y_final, 0))
-				{
-					path_start(path, 4, path_action_stop, false);
+			if(mp_grid_path(global.grid, path, x, y, x_final, y_final, 0))
+			{
+				path_start(path, 4, path_action_stop, false);
 				
-				}
+			}
+		
+		if(ball_i != undefined && jogar_i)
+		{
+			ball_i.x = x;
+			ball_i.y = y;
+		}
+
 		
 		alarm[0] = shoot_timer
 		
@@ -108,10 +111,18 @@ switch (b_states) {
 	case b_states.catching:
 		
 	#region catching
+	
+			if(i_num == 1)
+			{
+				ball_i.x = x;
+				ball_i.y = y;
+			}
+	
 	if(alarm[2] <= 0)
 	{	
 		if(jogar_i)
 		{	
+
 			
 			if(alarm[0] > 0)
 			{
@@ -123,6 +134,7 @@ switch (b_states) {
 				ball_i.speed = 10;
 				i_num = 2;
 				jogar_i = false;
+				ball_i = undefined;
 			
 				alarm[1] = 1;
 				alarm[2] = idle_timer;
@@ -138,3 +150,4 @@ switch (b_states) {
 			
 	    break;
 }
+
