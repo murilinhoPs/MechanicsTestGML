@@ -4,7 +4,6 @@ if(room == rm_game)
 {
 	scrp_create_grid();
 	
-	mp_grid_add_instances(global.grid, obj_inimigo, false);
 	
 	repeat(2)
 	{
